@@ -1,16 +1,12 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Category from "./Category";
-import LandingPage from "./LandingPage";
-import BrowserWrapper from "./BrowserWrapper";
+import "./App.css";
+import MainPageWrapper from "./wrappers/MainPageWrapper";
 
 const App = () => {
 	return (
 		<Router>
-			<Route exact path="/" component={LandingPage} />
-			<Route path="/browse" component={BrowserWrapper} />
-			<Route path="/categories/:categoryID" component={Category} />
+			<Route path="/" component={MainPageWrapper} />
 		</Router>
 	);
 };

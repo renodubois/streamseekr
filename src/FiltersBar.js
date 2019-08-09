@@ -1,10 +1,10 @@
 import React from "react";
-import CategorySelector from "./CategorySelector";
+import CategorySelectorWrapper from "./wrappers/CategorySelectorWrapper";
 
 const FiltersBar = (props) => {
 	return (
 		<div stlye={{ display: "flex" }}>
-			<CategorySelector {...props} />
+			<CategorySelectorWrapper {...props} />
 		</div>
 	);
 };

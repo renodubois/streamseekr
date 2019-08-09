@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StreamInfo from "./components/StreamInfo";
-import { getStreamsByCategoryID, getStreamsByCategoryIDAndUsernames, getTopStreams } from "./utils/twitch";
+import { getStreamsByCategoryID, getTopStreams } from "./utils/twitch";
 
 const thumbnailHeight = "227";
 const thumbnailWidth = "394";
@@ -20,14 +20,13 @@ function rehydrateFilters(filters) {
 
 const Browser = ({ categories, filters }) => {
 	const [streams, setStreams] = useState([]);
-	const parsedFilters = rehydrateFilters(filters);
+	// const parsedFilters = rehydrateFilters(filters);
 	useEffect(() => {
 		async function getStreams() {
 			const streamsData = [];
-			if (categories) {
-				for (const id of categories) {
+			if (categories.length > 0) {
+				for (const { id } of categories) {
 					try {
-						const streams = await getStreamsByCategoryIDAndUsernames(id);
 						const data = await getStreamsByCategoryID(id);
 						streamsData.push(...data);
 					} catch (err) {

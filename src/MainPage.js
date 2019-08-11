@@ -14,10 +14,14 @@ const MainPage = (props) => {
 				const categories = parsedQuery.categories.split(",");
 				for (const categoryID of categories) {
 					// get the name for the category
-					const category = await getCategoryByID(categoryID);
-					const categoryName = category.name;
-					// add to the redux store
-					categoriesToAdd.push({ name: categoryName, id: categoryID });
+					try {
+						const category = await getCategoryByID(categoryID);
+						const categoryName = category.name;
+						// add to the redux store
+						categoriesToAdd.push({ name: categoryName, id: categoryID });
+					} catch (err) {
+						// TODO: report error to logging service, display error message
+					}
 				}
 			}
 			if ("filters" in parsedQuery && !Array.isArray(parsedQuery.filters)) {
@@ -28,6 +32,7 @@ const MainPage = (props) => {
 		addCategories();
 	}, [parsedQuery, onCategoryAdd]);
 
+	// TODO: Have an error bar component that displays at the top if shit goes wrong
 	return (
 		<>
 			<FiltersBar {...props} />

@@ -54,13 +54,13 @@ const Browser = ({ categories, filters }) => {
 		streams.sort((a, b) => b.viewer_count - a.viewer_count);
 		streamList = streams.map((stream) => {
 			let imageThumbnailURL = stream.thumbnail_url.replace("{width}", thumbnailWidth).replace("{height}", thumbnailHeight);
-			return <StreamInfo userName={stream.user_name} streamTitle={stream.title} streamThumbnailURL={imageThumbnailURL} key={stream.id} />;
+			return <StreamInfo userName={stream.user_name} streamTitle={stream.title} streamThumbnailURL={imageThumbnailURL} key={stream.id} viewerCount={stream.viewer_count} startedAt={stream.started_at} />;
 		});
 	}
 	return (
-		<div>
-			<div style={{ display: "flex", flexWrap: "wrap" }}>{streams.length > 0 ? streamList : "Loading streams..."}</div>
-		</div>
+		<>
+			<div className="browserWrapper">{streams.length > 0 ? streamList : "Loading streams..."}</div>
+		</>
 	);
 };
 

@@ -29,11 +29,13 @@ const CategorySelector = (props) => {
 					setCategory("");
 				}}
 			>
+				<label htmlFor="category">Categories:</label>
 				<input name="category" type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
 			</form>
-			<div>
+			<div className="categoryRow">
 				{props.categories.map((category) => (
-					<a
+					<div
+						className="selectedCategory"
 						href="javscript://"
 						onClick={(e) => {
 							onRemove({ e, category, history, onCategoryRemove, pathname: location.pathname });
@@ -41,7 +43,7 @@ const CategorySelector = (props) => {
 						key={category.id}
 					>
 						{category.name}
-					</a>
+					</div>
 				))}
 			</div>
 		</div>

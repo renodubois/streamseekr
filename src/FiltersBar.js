@@ -3,7 +3,7 @@ import CategorySelectorWrapper from "./wrappers/CategorySelectorWrapper";
 
 const FiltersBar = (props) => {
 	return (
-		<div stlye={{ display: "flex" }}>
+		<div className="filtersBar" style={{ display: "flex" }}>
 			<CategorySelectorWrapper {...props} />
 		</div>
 	);

@@ -1,33 +1,82 @@
-.App {
-  text-align: center;
+.streamTitle {
+	font-size: 24px;
+	font-weight: bold;
+	text-overflow: ellipsis;
+	max-width: 75ch;
+	color: #1f2933;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.streamTitleWrapper {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-height: 33px;
+	max-width: 394px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.streamSubTitle {
+	font-size: 18px;
+	color: #52606d;
 }
 
-.App-link {
-  color: #61dafb;
+.browserWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.streamContainer {
+	padding: 10px;
+}
+
+.selectedCategory {
+	margin-right: 36px;
+	padding: 13px;
+	background-color: #bed0f7;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.categoryRow {
+	height: 60px;
+	max-width: 50vw;
+	display: flex;
+	align-content: center;
+	margin-top: 30px;
+}
+
+.filtersBar {
+	display: flex;
+	margin: 25px 25px 0 25px;
+}
+
+.viewerCount {
+	position: absolute;
+	padding: 5px;
+	border-radius: 5px;
+	bottom: 12px;
+	right: 10px;
+	font-weight: bold;
+	background-color: #f86a6a;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.streamUptime {
+	position: absolute;
+	padding: 5px;
+	border-radius: 5px;
+	bottom: 12px;
+	left: 10px;
+	font-weight: bold;
+	background-color: #333333;
+	opacity: 0.8;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.streamThumbnail {
+	position: relative;
 }

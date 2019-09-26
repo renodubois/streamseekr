@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MainPage from "../MainPage";
-import { categorySlice } from "../stores/main";
+import { categorySlice } from "../stores/categories";
 
 const mapStateToProps = (state) => {
 	return {

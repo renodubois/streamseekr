@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CategorySelector from "../CategorySelector";
-import { categorySlice } from "../stores/main";
+import { categorySlice } from "../stores/categories";
 
 const mapStateToProps = (store) => {
 	return {

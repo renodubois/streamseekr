@@ -4,7 +4,7 @@ import { categorySlice } from "../stores/main";
 
 const mapStateToProps = (state) => {
 	return {
-		categories: state
+		categories: state.categories
 	};
 };
 const mapDispatchToProps = (dispatch) => {

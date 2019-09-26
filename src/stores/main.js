@@ -1,22 +1,10 @@
-import { configureStore, createSlice } from "redux-starter-kit";
-
-export const categorySlice = createSlice({
-	initialState: [],
-	reducers: {
-		addCategory: (state, action) => {
-			const existingCategory = state.find((category) => category.id === action.payload.id);
-			if (!existingCategory) {
-				state.push(action.payload);
-			}
-		},
-		removeCategory: (state, action) => {
-			return state.filter((category) => category.name !== action.payload);
-		}
-	}
-});
+import { configureStore } from "redux-starter-kit";
+import { categorySlice } from "./category";
 
 const store = configureStore({
-	reducer: categorySlice.reducer
+	reducer: {
+		categories: categorySlice.reducer
+	}
 });
 
 export default store;

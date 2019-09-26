@@ -1,23 +1,15 @@
 import { connect } from "react-redux";
 import CategorySelector from "../CategorySelector";
-import { addCategory, removeCategory } from "../stores/main";
+import { categorySlice } from "../stores/main";
 
 const mapStateToProps = (store) => {
 	return {
 		categories: store
 	};
 };
-// const mapDispatchToProps = (dispatch) => {
-// 	return {
-// 		onCategoryAdd: (name, id) => {
-// 			dispatch(addCategory, { name, id });
-// 		},
-// 		onCategoryRemove: (name) => {
-// 			dispatch(removeCategory, { name });
-// 		}
-// 	};
-// };
 
+const { actions } = categorySlice;
+const { addCategory, removeCategory } = actions;
 const mapDispatchToProps = {
 	addCategory,
 	removeCategory

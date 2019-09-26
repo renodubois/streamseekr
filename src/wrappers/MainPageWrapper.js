@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MainPage from "../MainPage";
-import { addCategory, removeCategory } from "../stores/main";
+import { categorySlice } from "../stores/main";
 
 const mapStateToProps = (state) => {
 	return {
@@ -8,12 +8,13 @@ const mapStateToProps = (state) => {
 	};
 };
 const mapDispatchToProps = (dispatch) => {
+	const { actions } = categorySlice;
 	return {
 		onCategoryAdd: (name, id) => {
-			dispatch(addCategory({ name, id }));
+			dispatch(actions.addCategory({ name, id }));
 		},
 		onCategoryRemove: (name) => {
-			dispatch(removeCategory(name));
+			dispatch(actions.removeCategory(name));
 		}
 	};
 };

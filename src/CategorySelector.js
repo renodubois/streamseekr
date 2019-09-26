@@ -22,7 +22,7 @@ const CategorySelector = (props) => {
 	const [category, setCategory] = useState("");
 	const { history, location, onCategoryRemove } = props;
 	return (
-		<div>
+		<div className="optionBarItem">
 			<form
 				onSubmit={(e) => {
 					onSubmit({ e, category, history: props.history, pathname: location.pathname });

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import qs from "query-string";
 import Browser from "./Browser";
-import FiltersBar from "./FiltersBar";
+import OptionsBar from "./OptionsBar";
 import { getCategoryByID } from "./utils/twitch";
 
 const MainPage = (props) => {
@@ -35,7 +35,7 @@ const MainPage = (props) => {
 	// TODO: Have an error bar component that displays at the top if shit goes wrong
 	return (
 		<>
-			<FiltersBar {...props} />
+			<OptionsBar {...props} />
 			<Browser {...props} />;
 		</>
 	);

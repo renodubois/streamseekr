@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPageWrapper from "./wrappers/MainPageWrapper";
-import { styles } from "./styles";
 import NavBar from "./components/NavBar";
 
 const App = () => {

@@ -47,9 +47,14 @@
 	margin-top: 30px;
 }
 
-.filtersBar {
+.optionsBar {
 	display: flex;
 	margin: 25px 25px 0 25px;
+}
+
+.optionBarItem {
+	flex: 1;
+	justify-content: space-between;
 }
 
 .viewerCount {
